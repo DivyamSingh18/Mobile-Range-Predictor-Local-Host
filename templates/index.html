@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Price Range Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href='/static/style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;400&display=swap" rel="stylesheet">
+ 
+<body>
+  <div class="wrapper">
+
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>  
+        <div class="item"></div>
+
+        <div class="item" id="main">
+            <div id="header">Mobile Range Predictor</div>
+            <div id="image"> <img src="images\pic.webp"alt="image"> </div>
+
+            <div id="inpt1">
+                <form action="/predict" method='POST'>
+                            <div class="input-box">
+                                <p>Battery : </p>
+                                <input  type="text" name="battery_power" id="battery_power" placeholder="Enter the Mobile Battery"  class="input-form" autocomplete="off" required>
+                            </div>
+                            <div class="input-box">
+                                <p>Front Camera: </p>
+                                <input  type="text" name="fc" id="fc" placeholder="Enter the Model name"  class="input-form" autocomplete="off" required>
+                            </div>
+                            <div class="input-box">
+                                <p>Internal Memory:</p>
+                                <input  type="text" name="int_memory" id="int_memory" placeholder="Battery Life  (i.e:800,1500)" autocomplete="off" class="input-form" required>
+                            </div>
+                            <div class="input-box">
+                                <p>Mobile Weight :</p>
+                                <input  type="text" name="mobile_wt" id="mobile_wt" placeholder="Memory space  in (gb)" class="input-form" autocomplete="off" required>
+                            </div>
+            </div>
+
+            <div id="inpt2">
+                <div class="input-box">
+                    <p>Pixel Height : </p>
+                    <input  type="text" name="px_height" id="px_height" placeholder="Ram in (mb)" class="input-form" autocomplete="off" required>
+                </div>
+                <div class="input-box">
+                    <p>Pixel Width :</p>
+                    <input  type="text" name="px_width" id="px_width" placeholder="Pixel height(i.e: 984,1210)" class="input-form" autocomplete="off" required>
+                </div>
+                <div class="input-box">
+                    <p>RAM : </p>
+                    <input  type="text" name="ram" id="ram" placeholder="Pixel Width(i.e : 1210,1000)" class="input-form" autocomplete="off" required>
+                </div>
+                <div class="input-box">
+                    <p>Talk Time:</label></p>
+                    <input  type="text" name="talk_time" id="talk_time" placeholder="Pixel Width(i.e : 1210,1000)" class="input-form" autocomplete="off" required>
+                </div>
+            </div>
+            <div id="footer">
+                    <button type="submit">Predict </button>
+                            <b>Price range:{{output}}</b>
+
+        </div>
+            </div>   
+            
+            
+        </div>
+
+        <div class="item"></div>  
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>  
+      </div>
+  </div>
+</body>
+</html>
